@@ -17,7 +17,7 @@ const LayoutRoute = (props) => {
             }>
             <Link to="/" className="btn btn-primary">Home</Link>
             <Link to="/about" className="btn btn-primary">About</Link>
-            <Link to="/providers" className="btn btn-primary">Service Providers List</Link>
+            
             
             </NavBar>
 

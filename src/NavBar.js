@@ -24,17 +24,17 @@ function NavBar(props) {
                 <b>Service Categories</b>
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <a className="dropdown-item" href="CategoryCreate.js"><b>Create</b></a>
+                <a className="dropdown-item" href="CategoryCreate.js"><b>New Creations</b></a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="CategoryConstruct.js"><b>Construct</b></a>
+                <a className="dropdown-item" href="CategoryConstruct.js"><b>Construction</b></a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="CategoryInstall.js"><b>Install</b></a>
+                <a className="dropdown-item" href="CategoryInstall.js"><b>Installation</b></a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="CategoryRepair.js"><b>Repair</b></a>
+                <a className="dropdown-item" href="CategoryRepair.js"><b>Repairs</b></a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="CategoryManage.js"><b>Manage</b></a>
+                <a className="dropdown-item" href="CategoryManage.js"><b>Management</b></a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="CategoryDeliver.js"><b>Deliver</b></a>
+                <a className="dropdown-item" href="CategoryDeliver.js"><b>Deliveries</b></a>
                 </div>
             </li>
             <li className="nav-item">

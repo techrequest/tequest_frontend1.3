@@ -18,6 +18,7 @@ function HomeScreen() {
     <div className="App">
 
         <TeQuestHeader></TeQuestHeader>
+        
         <MyCarousel></MyCarousel>
 
         <BoxLabelsPart></BoxLabelsPart>

@@ -38,22 +38,22 @@ function MyCarousel(){
                                     <a className="nav-link" href="ServiceCategories.js"><CategoryIcon/> Service Categories</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryCreate.js"><CreateIcon/> Create</a>
+                                    <a className="nav-link" href="CategoryCreate.js"><CreateIcon/> New Creations</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryConstruct.js"><AccountBalanceIcon/> Construct</a>
+                                    <a className="nav-link" href="CategoryConstruct.js"><AccountBalanceIcon/> Construction</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryInstall.js"><AdbIcon/> Install</a>
+                                    <a className="nav-link" href="CategoryInstall.js"><AdbIcon/> Installation</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryRepair.js"><BuildIcon/> Repair</a>
+                                    <a className="nav-link" href="CategoryRepair.js"><BuildIcon/> Repairs</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryManage.js"><HowToRegIcon/> Manage</a>
+                                    <a className="nav-link" href="CategoryManage.js"><HowToRegIcon/> Management</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryDeliver.js"><MarkunreadMailboxIcon/> Deliver</a>
+                                    <a className="nav-link" href="CategoryDeliver.js"><MarkunreadMailboxIcon/> Deliveries</a>
                                 </li>
                             </ul>
                         </nav>
