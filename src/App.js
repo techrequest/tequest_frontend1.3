@@ -5,6 +5,7 @@ import LayoutRoute from './LayoutRoute';
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ServiceProvidersList from './ServiceProvidersList';
+import SideBarMenu from './SideBarMenu';
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Switch>
             <LayoutRoute path="/" exact={true} component={HomeScreen} />
             <LayoutRoute path="/about" exact={true} component={AboutScreen} />
-            <LayoutRoute path="/providers" exact={true} component={ServiceProvidersList} />
+            <LayoutRoute path="/serviceproviders" exact={true} component={ServiceProvidersList} />
+            <LayoutRoute path="/sidebar" exact={true} component={SideBarMenu} />
         </Switch>
     </BrowserRouter>
   )

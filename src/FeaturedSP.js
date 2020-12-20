@@ -1,5 +1,4 @@
 import React from 'react';
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import storefrontitaly from './images/storefrontitaly.jpg';
 import storefrontold from './images/storefrontold.jpg';
 import storefronturban from './images/storefronturban.jpg';

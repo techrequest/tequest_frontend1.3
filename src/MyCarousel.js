@@ -1,5 +1,4 @@
 import React from'react';
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import HomeIcon from '@material-ui/icons/Home';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import BuildIcon from '@material-ui/icons/Build';
@@ -24,11 +23,11 @@ function MyCarousel(){
         <div className="header">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-3" align="left">
                         <nav className="navbar bg-light">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="index.html">
+                                    <a className="nav-link" href="index.js">
                                         <HomeIcon/> Home</a>
                                 </li>
                                 <li className="nav-item">
