@@ -14,7 +14,8 @@ const App = () => {
             <LayoutRoute path="/" exact={true} component={HomeScreen} />
             <LayoutRoute path="/about" exact={true} component={AboutScreen} />
             <LayoutRoute path="/serviceproviders" exact={true} component={ServiceProvidersList} />
-            <LayoutRoute path="/sidebar" exact={true} component={SideBarMenu} />
+            <LayoutRoute path="/serviceproviders" exact={true} component={ServiceProvidersList} />
+            
         </Switch>
     </BrowserRouter>
   )
