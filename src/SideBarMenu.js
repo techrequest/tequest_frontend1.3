@@ -1,34 +1,35 @@
 import { Container } from '@material-ui/core';
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
 function  SideBarMenu(props) {
 
     return(
         <Container align="left">
             <div className="sidebar">
-                        <div className="sidebar-widget category">
-                            <h2 className="title">Service Categories</h2>
-                            <nav className="navbar bg-light">
-                                <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-female"></i>New Creations</a>
+                <div className="sidebar-widget category">
+                    <h2 className="title">Service Categories</h2>
+                    <nav className="navbar bg-light">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                            <Link to="/create" className="nav-link" > <i className="fa fa-female">
+                            </i>New Creations</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-building"></i>Construction</a>
+                            <Link to="/construct" className="nav-link" > <i className="fa fa-building"></i>Construction</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-battery-half"></i>Installation</a>
+                            <Link to="/install" className="nav-link" > <i className="fa fa-battery-half"></i>Installation</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-cogs"></i>Repairs</a>
+                            <Link to="/repair" className="nav-link" > <i className="fa fa-cogs"></i>Repairs</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-user-plus"></i>Management</a>
+                            <Link to="/manage" className="nav-link" > <i className="fa fa-user-plus"></i>Management</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><i className="fa fa-street-view"></i>Deliveries</a>
+                            <Link to="/deliver" className="nav-link" > <i className="fa fa-street-view"></i>Deliveries</Link>
                             </li>
-                            
                         </ul>
                     </nav>
                 </div>
@@ -62,7 +63,9 @@ function  SideBarMenu(props) {
                 <a href="#">orci luctus</a>
                 <a href="#">Nam lorem</a>
             </div>
-            </Container>
+
+            
+        </Container>
     )
     
 }

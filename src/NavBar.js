@@ -8,12 +8,11 @@ function NavBar(props) {
     <div>
     <nav className={`navbar navbar-expand-lg navbar-dark bg-dark ${props.className}`} >
           <div className="container-fluid">
-          <div className="d-flex flex-grow-1" align="left">
-            {props.children}
+              <div className="d-flex flex-grow-1" align="left">
+                {props.children}
+              </div>
+              {props.extraComponent}
           </div>
-          
-          {props.extraComponent}
-        </div>
         
         
         <div align="center" className="fixed-bottom text-light bg-dark">

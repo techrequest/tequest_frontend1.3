@@ -1,4 +1,5 @@
 import React from'react';
+import { Route, Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import BuildIcon from '@material-ui/icons/Build';
@@ -27,32 +28,32 @@ function MyCarousel(){
                         <nav className="navbar bg-light">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="index.js">
-                                        <HomeIcon/> Home</a>
+                                <Link to="/" className="nav-link" > 
+                                        <HomeIcon/> Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="ProviderPromotions.js" ><CardGiftcardIcon/> Promotions</a>
+                                <Link to="/promotions" className="nav-link" > <CardGiftcardIcon/> Promotions</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="ServiceCategories.js"><CategoryIcon/> Service Categories</a>
+                                <Link to="/serviceproviders" className="nav-link" ><CategoryIcon/> Service Providers List</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryCreate.js"><CreateIcon/> New Creations</a>
+                                <Link to="/create" className="nav-link" ><CreateIcon/> New Creations</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryConstruct.js"><AccountBalanceIcon/> Construction</a>
+                                <Link to="/construct" className="nav-link" ><AccountBalanceIcon/> Construction</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryInstall.js"><AdbIcon/> Installation</a>
+                                <Link to="/install" className="nav-link" ><AdbIcon/> Installation</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryRepair.js"><BuildIcon/> Repairs</a>
+                                <Link to="/repair" className="nav-link" ><BuildIcon/> Repairs</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryManage.js"><HowToRegIcon/> Management</a>
+                                <Link to="/manage" className="nav-link" ><HowToRegIcon/> Management</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="CategoryDeliver.js"><MarkunreadMailboxIcon/> Deliveries</a>
+                                <Link to="/deliver" className="nav-link" ><MarkunreadMailboxIcon/> Deliveries</Link>
                                 </li>
                             </ul>
                         </nav>

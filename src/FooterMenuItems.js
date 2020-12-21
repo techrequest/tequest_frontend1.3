@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
 function FooterMenuItems(){
     return(
@@ -35,9 +36,9 @@ function FooterMenuItems(){
                         <div class="footer-widget">
                             <h2>Company Info</h2>
                             <ul>
-                                <li><a href="#AboutUs.js">About Us</a></li>
-                                <li><a href="PrivacyPolicy.js">Privacy Policy</a></li>
-                                <li><a href="TNC.js">Terms and Condition</a></li>
+                                <li><Link to="/about" >About Us</Link></li>
+                                <li><Link to="privacypolicy">Privacy Policy</Link></li>
+                                <li><Link to="tnc">Terms and Condition</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -46,9 +47,9 @@ function FooterMenuItems(){
                         <div class="footer-widget">
                             <h2>Purchase Info</h2>
                             <ul>
-                                <li><a href="PaymentPolicy.js">Payment Policy</a></li>
-                                <li><a href="ShippingPolicy.js">Shipping Policy</a></li>
-                                <li><a href="ReturnPolicy.js">Return Policy</a></li>
+                                <li><Link to="paymentpolicy">Payment Policy</Link></li>
+                                <li><Link to="shippingpolicy">Shipping Policy</Link></li>
+                                <li><Link to="returnPolicy">Return Policy</Link></li>
                             </ul>
                         </div>
                     </div>

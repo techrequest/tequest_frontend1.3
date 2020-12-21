@@ -5,10 +5,11 @@
 }
 
 .App-logo {
+  padding-top: 5px;
   height: 10vmin;
   pointer-events: none;
-  padding-left: 100px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

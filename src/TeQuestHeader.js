@@ -1,10 +1,12 @@
 import React from 'react';
+import logo from './images/logo.jpg'
 
 function TeQuestHeader(){
   return(
       <div>
-           <h1>
-        TeQuest - Your Service Provider
+        <h1>
+           <img src={logo} className="App-logo rounded mx-auto " alt="logo"/>
+           TeQuest - Your Service Provider
         </h1>
         <hr></hr>
         <h4>
