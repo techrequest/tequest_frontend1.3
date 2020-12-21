@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import NavBar from './NavBar';
 
+
 const LayoutRoute = (props) => {
     return (
         <React.Fragment>
@@ -16,7 +17,7 @@ const LayoutRoute = (props) => {
                             <Link to="/serviceproviders" className="nav-link" > Service Providers List</Link>
                         </li>
                         <li className="nav-item dropdown active">
-                            <div className="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Categories</div>
+                            <Link to="#" className="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Service Categories</Link>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown1">
                                     <Link to="/create" className="dropdown-item" > New Creations</Link>
                                     <div className="dropdown-divider"></div>
@@ -41,7 +42,7 @@ const LayoutRoute = (props) => {
                                     <Link to="/faq" className="nav-link" > FAQ</Link>
                                 </li>
                                 <li className="nav-item dropdown active">
-                                    <div className="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > My Account</div>
+                                    <Link to="myaccount" className="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > My Account</Link>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown2">
                                             <Link to="/login" className="dropdown-item" > Login</Link>
                                         <div className="dropdown-divider"></div>

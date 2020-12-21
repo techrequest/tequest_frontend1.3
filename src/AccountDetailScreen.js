@@ -3,7 +3,7 @@ import TeQuestHeader from './TeQuestHeader';
 import SideBarMenu from './SideBarMenu';
 import FooterMenuItems from './FooterMenuItems';
 
-function AboutScreen () {
+function AccountDetailScreen () {
   return (
     <div className="App">
 
@@ -19,7 +19,7 @@ function AboutScreen () {
                                         <div className="col-md-4">
                                             
                                                 <h1>
-                                                  About Us
+                                                  Account Details
                                                 </h1>
                                         </div>
                                     </div>
@@ -46,8 +46,9 @@ function AboutScreen () {
                    
                 </div>
                 <FooterMenuItems></FooterMenuItems>
+
     </div>
   );
 }
 
-export default AboutScreen;
+export default AccountDetailScreen;

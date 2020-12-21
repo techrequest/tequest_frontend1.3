@@ -29,7 +29,7 @@ function MyCarousel(){
                             <ul className="navbar-nav">
                                 <li className="nav-item">
                                 <Link to="/" className="nav-link" > 
-                                        <HomeIcon/> Home</Link>
+                                        <HomeIcon /> Home</Link>
                                 </li>
                                 <li className="nav-item">
                                 <Link to="/promotions" className="nav-link" > <CardGiftcardIcon/> Promotions</Link>
