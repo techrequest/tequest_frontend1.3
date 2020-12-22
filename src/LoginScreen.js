@@ -1,53 +1,193 @@
-import React from 'react';
-import TeQuestHeader from './TeQuestHeader';
-import SideBarMenu from './SideBarMenu';
-import FooterMenuItems from './FooterMenuItems';
 
-function LoginScreen () {
-  return (
-    <div className="App">
+import React, { useState, useContext } from 'react';
+import AppContext from './AppContext';
+import './App.css';
 
-      <TeQuestHeader></TeQuestHeader>
-      <div className="product-view">
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-lg-8">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="product-view-top">
-                                    <div className="row">
-                                        <div className="col-md-4">
-                                            
-                                                <h1>
-                                                  LoginScreen
-                                                </h1>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div className="product-view-top">
-                                      <div className="row">
-                                                      Te-Quest is a platform to bring together consumers and providers.
+const LoginScreen = () => {
+  const [globalState, setGlobalState] = useContext(AppContext);
 
-                                      </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 sidebar">
-                                <SideBarMenu>
+    const [ state, setState ] = useState(
+        {
+            showErrors: false,
+            loading: false,
+            loginSuccess: false
+        }
+    )
+    // Undefined only before return
+    let emailField;
+    let passwordField;
 
-                                </SideBarMenu>
-                        </div>
+
+    const loginUser = () => {
+        const errors = [];
+        // Validate the user's input
+        if(emailField.value.length === 0) {
+            errors.push("Please enter your email!");
+        }
+
+        if(passwordField.value.length === 0) {
+            errors.push("Please enter your password!");
+        }
+        // If there are errors
+        if(errors.length > 0) {
+            setState(
+                {
+                    ...state,
+                    showErrors: true,
+                    errors: errors,
+                    
+                }
+            )
+        } 
+        // If no errors
+        else {
+            setState(
+                {
+                    ...state,
+                    loading: true,
+                    showErrors: false,
+                    errors: null,
+                    
+                }
+            );
+
+            // Capture all of user's response
+            // 1. Create an object called formData
+            // 2. For every field, add index and value to formData
+            const formData = {
+                email: emailField.value,
+                password: passwordField.value,
+            };
+
+            // 4. Send to backend
+            fetch(
+                'http://localhost:8080/users/login',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            )
+            // First, convert string from backend to json
+            .then(
+                (backendResponse) => backendResponse.json()
+            )
+            // Then, we can read the json from backend
+            .then(
+                (json) => {
+                  if(json.theToken) {
+                    setState(
+                        {
+                            ...state,
+                            loading: false,
+                            loginSuccess: true
+                        }
+                    );
+                    setGlobalState(
+                        {
+                            ...globalState,
+                            loggedIn: true
+                        }
+                    )
+                    localStorage.setItem('jwt', json.theToken);
+                }
+                else {
+                    setState(
+                        {
+                            ...state,
+                            loading: false,
+                        }
+                    );
+                    alert("Login not successful");
+                }
+                }
+            )
+            // If promise did not resolve
+            .catch(
+                (error) => {
+                    console.log('an error occured', error)
+                }
+            )
+
+        }
+    }
+
+    if( state.loginSuccess === true ) {
+        return(
+            <div className="App">
+                <div 
+                style={{maxWidth: 600}}
+                className="container mt-5 mb-5">
+                    <div className="alert alert-success">
+                        Logged In Successfully
                     </div>
+
+                    
                 </div>
             </div>
-            <div>
-                    <p> </p>
-                   
-                </div>
-                <FooterMenuItems></FooterMenuItems>
-    </div>
-  );
+        )
+    }
+    else {
+        return (
+                <div className="App container pt-5 pb-5" 
+                style={
+                    {
+                        maxWidth: "40em"
+                    }
+                }>
+                  <div className="mycustom-form">
+                <h3><b>Login details</b></h3>
+                <hr/>
+
+                {
+                    state.showErrors === true && 
+                    <div className="error-messages alert alert-danger">
+                        <ol>
+                        { 
+                            state.errors.map(
+                                (error) =>
+                                    <li>
+                                        {error}
+                                    </li>
+                            ) 
+                        }
+                        </ol>
+                    </div>
+                }
+               
+
+                <label>Enter your email *</label>
+                <input 
+                ref={(elem) => emailField = elem}
+                className="field form-control" name="email" type="text" />
+
+                <label>Enter a password *</label>
+                <input 
+                ref={(elem) => passwordField = elem}
+                className="field form-control" name="password" 
+                autocomplete="off" type="password" />
+
+                <br/><br/>
+
+                {
+                    !state.loading && !state.loginSuccess &&
+                    <button 
+                        className="btn mycustom-btn"
+                        onClick={loginUser}
+                         >
+                       Login
+                    </button>
+                }
+            </div>
+                {
+                    state.loading &&
+                    <div>Loading...</div>
+                }
+            </div>
+        )
+    }
 }
 
 export default LoginScreen;

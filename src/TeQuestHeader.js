@@ -6,7 +6,7 @@ function TeQuestHeader(){
       <div>
         <h1>
            <img src={logo} className="App-logo rounded mx-auto " alt="logo"/>
-           TeQuest - Your Service Provider
+           TeQuest 
         </h1>
         <hr></hr>
         <h4>

@@ -1,32 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import LayoutRoute from './LayoutRoute';
-import HomeScreen from './HomeScreen';
-import AboutScreen from './AboutScreen';
-import ServiceProvidersList from './ServiceProvidersList';
-import ContactScreen from './ContactScreen';
-import PromotionScreen from './PromotionScreen';
-import FAQScreen from './FAQScreen';
-import NewCreationScreen from './NewCreationScreen';
-import ConstructionScreen from './ConstructionScreen';
-import InstallationScreen from './InstallationScreen';
-import RepairScreen from './RepairScreen';
-import ManagementScreen from './ManagementScreen';
-import DeliverScreen from './DeliverScreen';
-import LoginScreen from './LoginScreen';
-import RegisterScreen from './RegisterScreen';
-import AccountDetailScreen from './AccountDetailScreen';
-import PrivacyPolicyScreen from './PrivacyPolicyScreen';
-import TnCScreen from './TnCScreen';
-import PaymentPolicyScreen from './PaymentPolicyScreen';
-import ShippingPolicyScreen from './ShippingPolicyScreen';
-import ReturnPolicyScreen from './ReturnPolicyScreen';
 
+import AppContext from './AppContext';
+import AboutScreen from './AboutScreen';
+import AccountDetailScreen from './AccountDetailScreen';
+import ConstructionScreen from './ConstructionScreen';
+import ContactScreen from './ContactScreen';
+import DeliverScreen from './DeliverScreen';
+import FAQScreen from './FAQScreen';
+import HomeScreen from './HomeScreen';
+import InstallationScreen from './InstallationScreen';
+import LayoutRoute from './LayoutRoute';
+import LoginScreen from './LoginScreen';
+import ManagementScreen from './ManagementScreen';
+import NewCreationScreen from './NewCreationScreen';
+import PromotionScreen from './PromotionScreen';
+import PrivacyPolicyScreen from './PrivacyPolicyScreen';
+import PaymentPolicyScreen from './PaymentPolicyScreen';
+import RegisterScreen from './RegisterScreen';
+import ReturnPolicyScreen from './ReturnPolicyScreen';
+import RepairScreen from './RepairScreen';
+import ServiceProvidersList from './ServiceProvidersList';
+import ShippingPolicyScreen from './ShippingPolicyScreen';
+import TnCScreen from './TnCScreen';
 
 
 const App = () => {
+  const [globalState, setGlobalState] = useState(
+    {
+      loggedIn: localStorage.getItem('jwt') ? true : false
+    }
+  )
   return (
+    <AppContext.Provider value={[globalState, setGlobalState]}>
     <BrowserRouter>
         <Switch>
             <LayoutRoute path="/" exact={true} component={HomeScreen} />
@@ -61,6 +68,7 @@ const App = () => {
 
         </Switch>
     </BrowserRouter>
+    </AppContext.Provider>
   )
 }
 
